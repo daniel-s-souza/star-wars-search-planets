@@ -20,25 +20,30 @@ function Provider({ children }) {
   }, []);
 
   const numericFilter = () => {
-    if (filterByNumericValues.length > 0) {
+    if (filterByNumericValues.length === 0) {
       setData(data2);
     }
-    const filterAll = data2.filter((planets) => {
-      if (filterByNumericValues.comparison === 'maior que') {
-        return Number(planets[filterByNumericValues.column])
-        > Number(filterByNumericValues.value);
-      }
-      if (filterByNumericValues.comparison === 'menor que') {
-        return Number(planets[filterByNumericValues.column])
-        < Number(filterByNumericValues.value);
-      }
-      if (filterByNumericValues.comparison === 'igual a') {
-        return Number(planets[filterByNumericValues.column])
-        === Number(filterByNumericValues.value);
-      }
-      return undefined;
-    });
-    setData(filterAll);
+    if (filterByNumericValues.length > 0) {
+      let filterAll = data2;
+      filterByNumericValues.forEach((prevState) => {
+        filterAll = filterAll.filter((planets) => {
+          if (prevState.comparison === 'maior que') {
+            return Number(planets[prevState.column])
+        > Number(prevState.value);
+          }
+          if (prevState.comparison === 'menor que') {
+            return Number(planets[prevState.column])
+        < Number(prevState.value);
+          }
+          if (prevState.comparison === 'igual a') {
+            return Number(planets[prevState.column])
+        === Number(prevState.value);
+          }
+          return undefined;
+        });
+        setData(filterAll);
+      });
+    }
   };
 
   useEffect(() => {

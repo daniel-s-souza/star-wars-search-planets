@@ -6,17 +6,21 @@ const columns = ['population', 'orbital_period', 'diameter',
 const comparisons = ['maior que', 'igual a', 'menor que'];
 
 function NumericFilter() {
-  const { setFilterByNumericValues } = useContext(StarWatsContext);
+  const { setFilterByNumericValues,
+    filterByNumericValues } = useContext(StarWatsContext);
   const [coluumn, setColumn] = useState('population');
   const [comparisoon, setComparison] = useState('maior que');
   const [value, setValue] = useState(0);
 
   const handleClick = () => {
-    setFilterByNumericValues({
-      column: coluumn,
-      comparison: comparisoon,
-      value,
-    });
+    setFilterByNumericValues([
+      ...filterByNumericValues,
+      {
+        column: coluumn,
+        comparison: comparisoon,
+        value,
+      },
+    ]);
   };
   return (
     <div>
