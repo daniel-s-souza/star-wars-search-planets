@@ -1,13 +1,11 @@
 import React, { useContext, useState } from 'react';
 import StarWatsContext from '../context/StarWarsContext';
 
-const columns = ['population', 'orbital_period', 'diameter',
-  'rotation_period', 'surface_water'];
 const comparisons = ['maior que', 'igual a', 'menor que'];
 
 function NumericFilter() {
   const { setFilterByNumericValues,
-    filterByNumericValues } = useContext(StarWatsContext);
+    filterByNumericValues, columns } = useContext(StarWatsContext);
   const [coluumn, setColumn] = useState('population');
   const [comparisoon, setComparison] = useState('maior que');
   const [value, setValue] = useState(0);

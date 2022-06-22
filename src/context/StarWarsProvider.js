@@ -8,6 +8,8 @@ function Provider({ children }) {
   const [data2, setData2] = useState([]);
   // const [data3, setData3] = useState([]);
   const [planet, setPlanet] = useState({ filterByName: { name: '' } });
+  const [columns, setColumns] = useState(['population', 'orbital_period', 'diameter',
+    'rotation_period', 'surface_water']);
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
   async function getAPIData() {
     const results = await requestApi();
@@ -42,6 +44,11 @@ function Provider({ children }) {
           return undefined;
         });
         setData(filterAll);
+
+        const columnFiltered = columns.filter((initialColumn) => initialColumn
+        !== prevState.column);
+
+        setColumns(columnFiltered);
       });
     }
   };
@@ -53,7 +60,12 @@ function Provider({ children }) {
   return (
     <StarWarsContext.Provider
       value={
-        { data, planet, setPlanet, filterByNumericValues, setFilterByNumericValues }
+        { data,
+          planet,
+          setPlanet,
+          filterByNumericValues,
+          setFilterByNumericValues,
+          columns }
       }
     >
       {children}
