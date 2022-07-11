@@ -16,11 +16,11 @@ _Uma lista com filtros de planetas do universo de Star Wars usando Context API e
  * Entre na pasta do repositório:
    * ```cd star-wars-search-planets```
  
- ** Instale as dependências **
+ **Instale as dependências**
  
   * ```npm install```
   
- ** Executar a aplicação: **
+ **Executar a aplicação:**
   
   * ```npm start```
   
