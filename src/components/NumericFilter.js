@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import StarWatsContext from '../context/StarWarsContext';
+import './NumericFilter.css';
 
 const comparisons = ['maior que', 'igual a', 'menor que'];
 
@@ -22,7 +23,7 @@ function NumericFilter() {
   };
   return (
     <div>
-      <form>
+      <form className="form">
         <label htmlFor="column">
           <select
             name="column"

@@ -1,0 +1,60 @@
+button {
+  width: 140px;
+  height: 35px;
+  font-size: 23px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+ }
+ 
+ button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #f9d71c;
+  z-index: -1;
+  transition: all 0.5s;
+ }
+ 
+ button:hover::before {
+  width: 100%;
+ }
+ 
+ button:hover {
+  color: black;
+ }
+ 
+ button:active:before {
+  background: #f9d71c;
+ }
+
+ .form {
+  align-content: space-around;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  position: relative;
+  top: 150px;
+ }
+
+ form input {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+ }
+
+ form select {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+ }

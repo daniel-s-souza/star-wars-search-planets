@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import StarWarsContext from '../context/StarWarsContext';
+import './table.css';
 
 function Table() {
   const { data, planet } = useContext(StarWarsContext);
@@ -10,9 +11,9 @@ function Table() {
     setNames(filterPlanetsName);
   }, [data, planet]);
   return (
-    <table>
+    <table className="tableComponent">
       <thead>
-        <tr>
+        <tr className="tableTitle">
           <th>Name</th>
           <th>Rotation period</th>
           <th>Orbital Period</th>

@@ -1,0 +1,18 @@
+.tableComponent {
+  background-color: #3A3B3C;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px #f9d71c;
+  color: white;
+  font-size: 15px;
+  left: 4.5%;
+  max-height: 50%;
+  max-width: 50%;
+  position: relative;
+  margin-top: 15%;
+}
+
+.tableTitle {
+  background-color: #f9d71c;
+  border-radius: 5px;
+  color: black;
+}

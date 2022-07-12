@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import StarWatsContext from '../context/StarWarsContext';
+import './FilterName.css';
 
 function InputPlanetsName() {
   const { setPlanet } = useContext(StarWatsContext);
@@ -8,6 +9,7 @@ function InputPlanetsName() {
   }
   return (
     <input
+      className="nameInput"
       type="text"
       name="planet-name"
       placeholder="Nome do Planeta"
